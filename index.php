@@ -94,9 +94,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
   $values['email'] = empty($_COOKIE['email_value']) ? '' : $_COOKIE['email_value'];
   $values['data'] = empty($_COOKIE['data_value']) ? '' : $_COOKIE['data_value'];
   $values['pol'] = empty($_COOKIE['pol_value']) ? '' : $_COOKIE['pol_value'];
- // $values['languages'] = empty($_COOKIE['languages_value']) ? '' : $_COOKIE['languages_value'];
-  //$values['languages'] = isset($_COOKIE['languages_value']) ? explode(',', $_COOKIE['languages_value']) : [];
-  
   $values['languages'] = empty($_COOKIE['languages_value']) ? [] : json_decode($_COOKIE['languages_value'], true);
   $values['bio'] = empty($_COOKIE['bio_value']) ? '' : $_COOKIE['bio_value'];
   $values['agreement'] = empty($_COOKIE['agreement_value']) ? '' : $_COOKIE['agreement_value'];
@@ -214,8 +211,7 @@ else {
 
   // Сохранение в БД.
   // ...
-  $user = 'u67432'; // Заменить на ваш логин uXXXXX
-  $pass = '5758640'; // Заменить на пароль, такой же, как от SSH
+include ('conf.php');
   $db = new PDO('mysql:host=localhost;dbname=u67432', $user, $pass,
     [PDO::ATTR_PERSISTENT => true, PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
 

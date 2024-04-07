@@ -34,31 +34,31 @@
                 <form action="index.php" method="POST" id="form" class="form_body">
                     <div class="form_item">
                     <?php if (!empty($messages['name'])) { print $messages['name']; } ?>
-                        <input placeholder="Ваше имя"  class="form_input _req" type="text" name="name" <?php if ($errors['name']) {print 'class="error"';} ?> value="<?php print $values['name']; ?>">
+                        <input placeholder="Ваше имя"  class="form_input _req <?php if ($errors['name']) { print 'error'; } ?>" type="text" name="name" value="<?php print $values['name']; ?>">
                     </div>
                     <div class="form_item">
                     <?php if (!empty($messages['tel'])) { print $messages['tel']; } ?>
-                        <input  placeholder="Телефон" class="form_input _req _tel" type="text" name="tel" <?php if ($errors['tel']) {print 'class="error"';} ?> value="<?php print $values['tel']; ?>">
+                        <input  placeholder="Телефон" class="form_input _req _tel <?php if ($errors['tel']) { print 'error'; } ?>" type="text" name="tel"  value="<?php print $values['tel']; ?>">
                     </div>
                     <div class="form_item">
                     <?php if (!empty($messages['email'])) { print $messages['email']; } ?>
-                        <input placeholder="E-mail" class="form_input _req _email" type="text" name="email" <?php if ($errors['email']) {print 'class="error"';} ?> value="<?php print $values['email']; ?>" >
+                        <input placeholder="E-mail" class="form_input _req _email <?php if ($errors['email']) { print 'error'; } ?>" type="text" name="email"  value="<?php print $values['email']; ?>" >
                     </div>
                     <div class="form_item">
                     <?php if (!empty($messages['data'])) { print $messages['data']; } ?>
-                        <input name="data" class="form_input _req _date" type="date"   placeholder="Введите дату рождения" <?php if ($errors['data']) {print 'class="error"';} ?> value="<?php print $values['data']; ?>">
+                        <input name="data" class="form_input _req _date <?php if ($errors['data']) { print 'error'; } ?> " type="date"   placeholder="Введите дату рождения" value="<?php print $values['data']; ?>">
                     </div>
                     <div class="form_item">
                     <?php if (!empty($messages['pol'])) { print $messages['pol']; } ?>
-                        <p><b>Ваш пол</b></p>
+                        <div class="form_input3 <?php if ($errors['pol']) { print 'error'; } ?> "><b>Ваш пол</b></p>
                             <p><input name="pol"  type="radio" value="female" <?php if ($values['pol'] == 'female') {print 'checked';} ?>> женский</p>
                             <p><input name="pol" type="radio" value="male" <?php if ($values['pol'] == 'male') {print 'checked';} ?>> мужской</p>
                     </div>
-                    <div class="form_item"> 
+                    <div class="form_item "> 
                     <?php if (!empty($messages['languages'])) { print $messages['languages']; }
                     ?>
 
-                        <select multiple="multiple" class="form_input2 " name="languages[]" <?php if ($errors['languages']) {print 'class="error"';} ?>  >
+                        <select multiple="multiple" class="form_input2 <?php if ($errors['languages']) { print 'error'; } ?> " name="languages[]"  >
                             <option disabled>Выберете ваш любимый язык программирования</option>
                            
                             <option  value="100" <?php if (in_array("100", $values['languages'])) { print 'selected'; } ?>> Pascal</option>
@@ -76,12 +76,12 @@
                     </div>
                     <div class="form_item">
                     <?php if (!empty($messages['bio'])) { print $messages['bio']; } ?>
-                        <textarea  placeholder="Ваша биография" name="bio" class="form_input" <?php if ($errors['bio']) {print 'class="error"';} ?> value="<?php print $values['bio']; ?>"></textarea>
+                    <textarea placeholder="Ваша биография" name="bio" class="form_input <?php if ($errors['bio']) { print 'error'; } ?>"><?php print $values['bio']; ?></textarea>
                     </div>
                     <div class="form_item">
                     <?php if (!empty($messages['agreement'])) { print $messages['agreement']; } ?>
-                        <div class="d-flex row m-2">
-                            <input  class="col-1 checkbox_input _req" type="checkbox" name="agreement" <?php if ($errors['agreement']) {print 'class="error"';} ?>value="on" <?php if ($values['agreement'] == 'on') {print 'checked';} ?>>
+                        <div class="d-flex row m-2 <?php if ($errors['agreement']) {print 'error';} ?> ">
+                            <input  class="col-1 checkbox_input  " type="checkbox" name="agreement" value="on" <?php if ($values['agreement'] == 'on') {print 'checked';} ?>>
                             <label for="formAgreement" class="col-10 checkbox_label"> с контрактом ознакомлен</label>
                         </div>
                     </div>

@@ -4,9 +4,10 @@ body {
   
 
     .error {
-      border: 2px solid red;
-      border-radius:5px;
-      text-align: center;
+      color:#ff4141;
+      font-size:15px;
+      margin-top: 10px;
+      margin-bottom:10px;
     }
        
     .form_item{
@@ -26,6 +27,13 @@ body {
         height:150px;
         
       }
+      .form_input3{
+        height:auto;
+        border-radius:5px;
+        width:100%;
+
+        
+      }
       .checkbox_label{
         font-size:12px;
       }
@@ -39,12 +47,21 @@ body {
     .form-popup div textarea {
         border: 1px solid #1906f2;
     }
+      .form_input2.error{
+        box-shadow:0 0 15px #ff0000;
+      }
       .form_input.error{
         box-shadow:0 0 15px #ff0000;
       }
-     
+      .form_input3.error{
+        box-shadow:0 0 15px #ff0000;
+      }
       textarea.form_input{
         min-height:100px;
+      }
+      .checkbox_input{
+        height:25px;
+        width:25px;
       }
      
       .form_button{
