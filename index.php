@@ -112,6 +112,7 @@ else {
     // Выдаем куку на день с флажком об ошибке в поле fio.
     setcookie('name_error', '1', time() + 24 * 60 * 60);
     $errors = TRUE;
+    setcookie('name_value', $_POST['name'], time() + 30 * 24 * 60 * 60);
   }
   else {
     // Сохраняем ранее введенное в форму значение на месяц.
@@ -120,6 +121,7 @@ else {
   if (empty($_POST['tel']) || !is_numeric($_POST['tel']) || !preg_match('/^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7}$/', $_POST['tel'])) {
     setcookie('tel_error', '1', time() + 24 * 60 * 60);
     $errors = TRUE;
+    setcookie('tel_value', $_POST['tel'], time() + 30 * 24 * 60 * 60);
   }
   else {
     // Сохраняем ранее введенное в форму значение на месяц.
@@ -129,6 +131,7 @@ else {
   if (empty($_POST['email']) ||  !preg_match('/^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/i', $_POST['email']) ) {
     setcookie('email_error', '1', time() + 24 * 60 * 60);
     $errors = TRUE;
+    setcookie('email_value', $_POST['email'], time() + 30 * 24 * 60 * 60);
   }
   else {
     // Сохраняем ранее введенное в форму значение на месяц.
@@ -138,6 +141,7 @@ else {
   if (empty($_POST['data']) ||  !preg_match('/^[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|1[0-9]|2[0-9]|3[01])$/', $_POST['data']) ) {
     setcookie('data_error', '1', time() + 24 * 60 * 60);
     $errors = TRUE;
+    setcookie('data_value', $_POST['data'], time() + 30 * 24 * 60 * 60);
   }
   else {
     // Сохраняем ранее введенное в форму значение на месяц.
@@ -146,6 +150,7 @@ else {
   if (!isset($_POST['pol']) || !in_array($_POST['pol'], array('male', 'female'))) {
     setcookie('pol_error', '1', time() + 24 * 60 * 60);
     $errors = TRUE;
+    setcookie('pol_value', $_POST['pol'], time() + 30 * 24 * 60 * 60);
   }
   else {
     // Сохраняем ранее введенное в форму значение на месяц.
@@ -172,6 +177,7 @@ else {
   if (empty($_POST['bio']) ) {
     setcookie('bio_error', '1', time() + 24 * 60 * 60);
     $errors = TRUE;
+    setcookie('bio_value', $_POST['bio'], time() + 30 * 24 * 60 * 60);
   }
   else {
     // Сохраняем ранее введенное в форму значение на месяц.
